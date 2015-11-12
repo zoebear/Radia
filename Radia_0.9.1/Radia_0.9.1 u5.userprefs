@@ -1,23 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameController.cs">
     <Files>
-      <File FileName="Assets/Scripts/CameraControlZeroG.cs" Line="28" Column="46" />
-      <File FileName="Assets/Scripts/FDRenderer.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Function.cs" Line="36" Column="1" />
-      <File FileName="Assets/Scripts/GameController.cs" Line="337" Column="6" />
-      <File FileName="Assets/Scripts/LaunchScreenViz.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Link.cs" Line="61" Column="100" />
-      <File FileName="Assets/Scripts/LookInputModule.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MarkedController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/markHalo.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Menu.cs" Line="2" Column="11" />
-      <File FileName="Assets/Scripts/MenuManager.cs" Line="35" Column="41" />
-      <File FileName="Assets/Scripts/MouseLook.cs" Line="35" Column="95" />
-      <File FileName="Assets/Scripts/ScrollRectFollow.cs" Line="64" Column="2" />
-      <File FileName="Assets/Scripts/SelectionController.cs" Line="35" Column="73" />
-      <File FileName="Assets/Scripts/splashToMenu.cs" Line="35" Column="100" />
-      <File FileName="Assets/Scripts/UIController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="327" Column="2" />
+      <File FileName="../../../../../Code/github/Radia/Radia_0.9.1/Assets/Scripts/CameraControlZeroG.cs" Line="4" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

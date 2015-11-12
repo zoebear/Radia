@@ -69,10 +69,6 @@ public class GameController : MonoBehaviour {
 	public float damping   = 0.5f;
 	public bool runFDG 	   = true;	
 
-	// API for graph data
-	public string IpAddress = "127.0.0.1";
-	public string Port = "5000";
-
 	// For tracking instantiated objects
 	public Hashtable nodes;
 	public Hashtable links;
@@ -98,11 +94,9 @@ public class GameController : MonoBehaviour {
 	private IEnumerator LoadLayout(){
 		graph = new Graph();
 
-		string apiUrl = "http://" + IpAddress + ":" + Port + "/api";
-		statusText.text = "Using API at: " + apiUrl;
+		statusText.text = "Loading radia.json...";
 
-		string nodeJson = null;
-		string edgeJson = null;
+		string rawJson = null;
 		
 		//var req = new WWW(apiUrl + "/functions");
 		string path_prefix;
@@ -111,29 +105,19 @@ public class GameController : MonoBehaviour {
 		} else {
 			path_prefix = "/../../";
 		}
+
 		//local app path for finding the JSON files
-		var req = new WWW ("file://" + Application.dataPath + path_prefix + "functions.json");
+		var req = new WWW ("file://" + Application.dataPath + path_prefix + "radia.json");
 		yield return req;
 		if (req.error != null) {
-			statusText.text = "Error retrieving functions";
+			statusText.text = "Error reading radia.json";
 			return false;
 		}
-		nodeJson = req.text;
+		rawJson = req.text;
 
-		//req = new WWW(apiUrl + "/callgraph");
-		req = new WWW ("file://" + Application.dataPath + path_prefix + "callgraph.json");
-		yield return req;
-		if (req.error != null) {
-			statusText.text = "Error retrieving callgraph";
-			return false;
-		}
-		//edgeJson = req.text;
+		statusText.text = "Processing Data";
 
-		edgeJson = req.text;
-
-		statusText.text = "Loading Data";
-
-		var j = JSON.Parse(nodeJson);
+		var j = JSON.Parse(rawJson);
 		j = j["functions"];
 
 		for(int i = 0; i < j.Count; i++) {
@@ -190,17 +174,17 @@ public class GameController : MonoBehaviour {
 			nodeObject.longname		 = j[i]["long_name"];
 			nodeObject.basic_blk_cnt = int.Parse(j[i]["basic_blk_cnt"]);
 
-			if (j[i]["dangerous_calls"] != null) {
-				nodeObject.dangerous_calls = new string[j[i]["dangerous_calls"].Count];
-				for (int c = 0; c < j[i]["dangerous_calls"].Count; c++) {
-					nodeObject.dangerous_calls[c] = j[i]["dangerous_calls"][c]["name"];
+			if (j[i]["dangerous_list"] != null) {
+				nodeObject.dangerous_calls = new string[j[i]["dangerous_list"].Count];
+				for (int c = 0; c < j[i]["dangerous_list"].Count; c++) {
+					nodeObject.dangerous_calls[c] = j[i]["dangerous_list"][c];
 				}
 			}
 
 			if (j[i]["strings"] != null) {
 				nodeObject.strings = new string[j[i]["strings"].Count];
 				for (int c = 0; c < j[i]["strings"].Count; c++) {
-					nodeObject.strings[c] = j[i]["strings"][c]["text"];
+					nodeObject.strings[c] = j[i]["strings"][c];
 				}
 			}
 
@@ -219,7 +203,7 @@ public class GameController : MonoBehaviour {
 				yield return true;
 		}
 
-		j = JSON.Parse(edgeJson);
+		j = JSON.Parse(rawJson);
 		j = j["callgraph"];
 
 
@@ -232,7 +216,7 @@ public class GameController : MonoBehaviour {
 			}
 
 			Link linkObject = Instantiate(linkPrefab, new Vector3(0, 0, 0), Quaternion.identity) as Link;
-			linkObject.id       = int.Parse(j[i]["id"]);
+			linkObject.id       = i+1;
 			linkObject.sourceId = srcid;
 			linkObject.targetId = dstid;
 			links.Add(linkObject.id, linkObject);

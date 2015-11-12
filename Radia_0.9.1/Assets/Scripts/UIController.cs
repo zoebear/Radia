@@ -323,14 +323,5 @@ public class UIController : MonoBehaviour {
 		markChangeEvent.AddListener (ChangeMark);
 		mark_input.onEndEdit = markChangeEvent;
 	}
-
-	// Use this for initialization
-	void Start () {
-
-	}
 	
-	// Update is called once per frame
-	void Update () {
-
-	}
 }
