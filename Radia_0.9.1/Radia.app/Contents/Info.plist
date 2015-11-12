@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>Radia</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Unity Player version 4.6.1f1 (d1db7a1b5196). (c) 2014 Unity Technologies ApS. All rights reserved.</string>
+	<key>CFBundleIconFile</key>
+	<string>PlayerIcon.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>unity.Zoe Hardisty Design.Radia</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Radia</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>Unity Player version 4.6.1f1</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>4.6.1f1</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>PlayerApplication</string>
+	<key>UnityBuildNumber</key>
+	<string>d1db7a1b5196</string>
+</dict>
+</plist>
