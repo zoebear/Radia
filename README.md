@@ -2,7 +2,7 @@
 
 Radia is a tool designed to create an interactive and immerse environment to visualize code, and to augment the task of reverse engineering binaries. The tool takes decompiled binaries extracted through IDA Pro, and visualizes the call graph in 3D space as a force directed graph. Radia tags functions that could be potential problems, as well as giving the user specific insight into individual nodes and their contents and relationships to other functions. In the end, the hope is to improve the available tools for auditing code to readily identify and remediate problems, and ultimately, to make code less vulnerable to exploitation by malware.
 
-Radia was built as my thesis project in Interaction Design. For further details about the project see [Zoe Hardisty Design].(http://www.zoehardistydesign.com)
+Radia was built as my thesis project in Interaction Design. For further details about the project see [Zoe Hardisty Design](http://zoehardistydesign.com/portfolio/radia-visualizing-code/).
 
 Please contact me at zoe [dot] hardisty [at] gmail.com if you are interested in expanding this project especially if you would like design to be a part of it.
 
